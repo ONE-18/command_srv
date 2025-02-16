@@ -1,0 +1,13 @@
+services:
+  command-server:
+    build:
+      context: .
+    container_name: command-server
+    ports:
+      - "5000:5000"
+    volumes:
+      - command-server-files:/app # Mapea el volumen a /app en el contenedor
+    restart: always
+
+volumes:
+  command-server-files: # Declaración global del volumen

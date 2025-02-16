@@ -1,0 +1,5 @@
+{
+    "example": "echo 'Este es un comando de ejemplo'",
+    "list_files": "ls -la",
+    "current_directory": "pwd"
+}
