@@ -2,7 +2,7 @@
 FROM python:3.9-slim
 
 # Instala dependencias necesarias
-RUN pip install flask
+RUN pip install -r requirements.txt
 
 # Copia el código y el archivo JSON al contenedor
 WORKDIR /app
