@@ -14,9 +14,24 @@ def load_commands():
         print(f"Error cargando commands.json: {e}")
         return {}
 
+# Ruta para "/"
+@app.route('/')
+def home():
+    return jsonify({
+        "message": "Bienvenido al servicio",
+        "status": "OK"
+    })
+
+@app.errorhandler(404)
+def not_found(error):
+    return jsonify({
+        "error": "Endpoint no encontrado",
+        "status": 404
+    }), 404
+
 @app.route('/<key>', methods=['GET'])
 def execute_command(key):
-    # Recarga los comandos cada vez que se realiza una petición
+    # Recarga los comandos cada vez que se realiza una peticiÃ³n
     commands = load_commands()
     command = commands.get(key)
 
