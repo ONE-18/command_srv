@@ -1,12 +1,12 @@
 # Usa una imagen base de Python
 FROM python:3.9-slim
 
-# Instala dependencias necesarias
-RUN pip install -r requirements.txt
-
 # Copia el código y el archivo JSON al contenedor
 WORKDIR /app
 COPY  . .
+
+# Instala dependencias necesarias
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Expone el puerto 5000
 EXPOSE 5000
